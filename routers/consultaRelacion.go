@@ -16,7 +16,7 @@ func ConsultaRelacion(w http.ResponseWriter, r *http.Request) {
 	t.UsuarioID = IDUsuario
 	t.UsuarioRelacionID = ID
 
-	var resp models.RespuestaConsultaRelacion
+	var resp models.RespuestaConsultaRelacion 
 
 	status, err := bd.ConsultoRelacion(t)
 	if err != nil || status == false {

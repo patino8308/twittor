@@ -17,14 +17,13 @@ func ListaUsuarios(w http.ResponseWriter, r *http.Request) {
 
 	pagTemp, err := strconv.Atoi(page)
 	if err != nil {
-		http.Error(w, "Debe enviar el parametro pagina como entero mayor a 0", http.StatusBadRequest)
+		http.Error(w, "Debe enviar el parámetro página como entero mayor a 0", http.StatusBadRequest)
 		return
 	}
 
 	pag := int64(pagTemp)
 
 	result, status := bd.LeoUsuariosTodos(IDUsuario, pag, search, typeUser)
-
 	if status == false {
 		http.Error(w, "Error al leer los usuarios", http.StatusBadRequest)
 		return

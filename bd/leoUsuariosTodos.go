@@ -15,7 +15,7 @@ func LeoUsuariosTodos(ID string, page int64, search string, tipo string) ([]*mod
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 
-	db := MongoCN.Database("twittor")
+	db := MongoCN.Database("twittores")
 	col := db.Collection("usuarios")
 
 	var results []*models.Usuario

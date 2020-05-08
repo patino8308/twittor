@@ -8,8 +8,8 @@ import (
 	"github.com/patino8308/twittor/bd"
 )
 
-/*leoTweetsSeguidores lee los tweets de todos los seguidores*/
-func leoTweetsSeguidores(w http.ResponseWriter, r *http.Request) {
+/*LeoTweetsSeguidores lee los tweets de todos los seguidores*/
+func LeoTweetsSeguidores(w http.ResponseWriter, r *http.Request) {
 
 	if len(r.URL.Query().Get("pagina")) < 1 {
 		http.Error(w, "Debe enviar el parametro pagina", http.StatusBadRequest)
@@ -21,7 +21,7 @@ func leoTweetsSeguidores(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	respuesta, correcto := bd.LeoTwetsSeguidores(IDUsuario, pagina)
+	respuesta, correcto := bd.LeoTweetsSeguidores(IDUsuario, pagina)
 	if correcto == false {
 		http.Error(w, "Error al leer  los Tweets", http.StatusBadRequest)
 		return
